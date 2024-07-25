@@ -6,18 +6,16 @@ import { useEffect, useState } from 'react'
 import { waitForTransactionReceipt } from 'wagmi/actions'
 import { config } from './main'
 import { toast } from 'react-toastify'
-import { isAddress } from 'viem/utils'; 
-import { Address } from 'viem'
-
+// import { isAddress } from 'viem/utils'; 
 // import truncateEthAddress from 'truncate-eth-address';
 
 
 function App(): JSX.Element {
-  const { address, isConnected } = useAccount();
+  // const { address, isConnected } = useAccount();
+  const { address } = useAccount();
   // const [isMinting, setIsMinting] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [amount, setAmount] = useState(1);
-  const safeAddress = address?? 'Please, connect your wallet'; // Se utiliza este string como placeholder
+  // const safeAddress = address?? 'Please, connect your wallet'; // Se utiliza este string como placeholder
   const [name, setName] = useState('');
   const [pass, setPass] = useState('');//Mejorar esto, asegurar, guardar, etc
   // const [participantAddress, setParticipantAddress] = useState('');//Mejorar esto, asegurar, guardar, etc
@@ -41,32 +39,32 @@ function App(): JSX.Element {
   const [productData, setProductData] = useState<any>(null);
   const [provenanceData, setProvenanceData] = useState<any>(null);
   const [ownershipData, setOwnershipData] = useState<any>(null);
-  const [actualProductId, setActualProductId] = useState<any>(null);
-  const [actualParticipantId, setActualParticipantId] = useState<any>(null);
+  // const [actualProductId, setActualProductId] = useState<any>(null);
+  // const [actualParticipantId, setActualParticipantId] = useState<any>(null);
   // const [actualOwnerIdData, setActualOwnerIdData] = useState<any>(0);
-  const [participantList] = useState<any[]>([]);
-  const [partId, setPartId] = useState<Number>(0);
+  // const [participantList] = useState<any[]>([]);
 
 
 
 // const ownerNumber = productData ? productData[1] : '';
 // const participant_type = participantData ? JSON.stringify(participantData[1]) : '';
 const participant_type = productData ? JSON.stringify(productData[3]) : '';
-const participant_name = participantData ? JSON.stringify(participantData[0]) : '';
+// const participant_name = participantData ? JSON.stringify(participantData[0]) : '';
   // let partId;
   let partData: any;
 
   // const { data, isLoading, refetch } = useReadContract({
-    console.log("partId", partId);
+
     console.log("partData", partData);
     console.log("participantId", participantId);
     console.log("productId", productId);
-    const { data: participant, refetch: refetchParticipant } = useReadContract({
+    // const { data: participant, refetch: refetchParticipant } = useReadContract({
+    const { refetch: refetchParticipant } = useReadContract({
     // const { participant, refetch } = useReadContract({
       abi,
       address: CONTRACT_ADDRESS,
       functionName: 'getParticipant',
-      args: [partId || participantId],
+      args: [participantId],
     })
     // setParticipantData(participant);
   // const { data, refetch } = useReadContract({
@@ -88,7 +86,8 @@ const participant_name = participantData ? JSON.stringify(participantData[0]) : 
   // setProvenanceData(provenance);
   // const { data, refetch } = useReadContract({
     console.log("productId3", productId);
-    const { data: ownership, refetch: refetchOwnership } = useReadContract({
+    // const { data: ownership, refetch: refetchOwnership } = useReadContract({
+    const { refetch: refetchOwnership } = useReadContract({
     abi,
     address: CONTRACT_ADDRESS,
     functionName: 'getOwnership',
@@ -99,17 +98,17 @@ const participant_name = participantData ? JSON.stringify(participantData[0]) : 
   //   address: CONTRACT_ADDRESS,
   //   functionName: 'owner_id',
   // })
-    const { data: actual_ParticipantId, refetch: refetchActualParticipantId } = useReadContract({
-    abi,
-    address: CONTRACT_ADDRESS,
-    functionName: 'participant_id',
-  })
-    const { data: actual_productId, refetch: refetchActualProductId } = useReadContract({
-    abi,
-    address: CONTRACT_ADDRESS,
-    functionName: 'product_id',
-  })
-  // setOwnershipData(ownership);
+  //   const { data: actual_ParticipantId, refetch: refetchActualParticipantId } = useReadContract({
+  //   abi,
+  //   address: CONTRACT_ADDRESS,
+  //   functionName: 'participant_id',
+  // })
+  //   const { data: actual_productId, refetch: refetchActualProductId } = useReadContract({
+  //   abi,
+  //   address: CONTRACT_ADDRESS,
+  //   functionName: 'product_id',
+  // })
+ 
   
 
   const fetchParticipantData = async () => {
@@ -136,24 +135,24 @@ const participant_name = participantData ? JSON.stringify(participantData[0]) : 
   //   const result = await refetchActualOwnerId();
   //   setActualOwnerIdData(result.data);
   // };
-  const fetchActualParticipantIdData = async () => {
-    const result = await refetchActualParticipantId();
-    setActualParticipantId(result.data);
-  };
-  const fetchActualProductId = async () => {
-    const result = await refetchActualProductId();
-    setActualProductId(result.data);
-  };
+  // const fetchActualParticipantIdData = async () => {
+  //   const result = await refetchActualParticipantId();
+  //   setActualParticipantId(result.data);
+  // };
+  // const fetchActualProductId = async () => {
+  //   const result = await refetchActualProductId();
+  //   setActualProductId(result.data);
+  // };
 
-  function getParticipants(){
-    for (let i = 0; i < actualParticipantId; i++){
-      // partId = i;
-      fetchParticipantData();
-      console.log(partData);
-      participantList[i] = partData;
-    }
+  // function getParticipants(){
+  //   for (let i = 0; i < actualParticipantId; i++){
+  //     // partId = i;
+  //     fetchParticipantData();
+  //     console.log(partData);
+  //     participantList[i] = partData;
+  //   }
     
-  }
+  // }
   
   console.log("ParticipantData",participantData);
   console.log("ProductData",productData);
@@ -257,8 +256,8 @@ const participant_name = participantData ? JSON.stringify(participantData[0]) : 
 useEffect(() => {
   // fetchActualOwnerIdData();
   // getParticipants();
-  fetchActualParticipantIdData();
-  fetchActualProductId();
+  // fetchActualParticipantIdData();
+  // fetchActualProductId();
   if (product || provenance){
     setProductData(product);
     setProvenanceData(provenance)
@@ -306,25 +305,25 @@ function formatDate(timestamp: bigint) {
 
 
 
-  const getImageClass = (ownerType: any) => {
-    let imageClass = 'image';
+  // const getImageClass = (ownerType: any) => {
+  //   let imageClass = 'image';
 
-    switch (ownerType) {
-      case 'Manufacturer':
-        imageClass += ' large image-manufacturer';
-        break;
-      case 'Supplier':
-        imageClass += ' large image-supplier';
-        break;
-      case 'Consumer':
-        imageClass += ' large image-consumer';
-        break;
-      default:
-        break;
-    }
+  //   switch (ownerType) {
+  //     case 'Manufacturer':
+  //       imageClass += ' large image-manufacturer';
+  //       break;
+  //     case 'Supplier':
+  //       imageClass += ' large image-supplier';
+  //       break;
+  //     case 'Consumer':
+  //       imageClass += ' large image-consumer';
+  //       break;
+  //     default:
+  //       break;
+  //   }
 
-    return imageClass;
-  };
+  //   return imageClass;
+  // };
 
   
 // return (
