@@ -386,7 +386,7 @@ function formatDate(timestamp: bigint) {
 //           placeholder="Dirección de destino"
 //           value={destinyAddress}
 //           onChange={(e) => setDestinyAddress(e.target.value)}
-//           className="border-2 border-gray-300 p-2 rounded-md w-full mb-4 text-base md:text-xl"
+//           className="border-2 border-stone-800 p-2 rounded-md w-full mb-4 text-base md:text-xl"
 //           style={{ backgroundColor: '#5e606d', fontSize: '20px', width: '430px' }}
 //           />
 //         </div>
@@ -398,7 +398,7 @@ function formatDate(timestamp: bigint) {
 //           min="1" 
 //           value={amount}
 //           onChange={(e) => setAmount(Number(e.target.value))}
-//           className="bg-gray-800 border-2 border-gray-300 p-2 rounded-md w-24 mb-4 text-base md:text-xl"
+//           className="bg-orange-100 border-2 border-stone-800 p-2 rounded-md w-24 mb-4 text-base md:text-xl"
 //           style={{ backgroundColor: '#5e606d', fontSize: '20px' }}
 //           />
 //         </div>
@@ -419,11 +419,11 @@ function formatDate(timestamp: bigint) {
   
 return (
   // <div className="flex flex-col items-center p-4">
-  <div className="flex flex-col flex-center m-auto bg-slate-900">
+  <div className="flex flex-col flex-center m-auto bg-orange-50 text-stone-800 bg-[url('/logistica_app.png')] bg-no-repeat bg-center bg-contain">
     <ConnectButton />
 
     <div className="flex flex-col gap-2 m-auto mt-4 w-full max-w-6xl">
-      <h1 className="md:text-3xl border-2 border-gray-300 rounded-md w-auto p-2">
+      <h1 className="md:text-3xl border-2 border-stone-800 rounded-md w-auto p-2">
         Entrada de datos</h1>
 
       {/* Sección de entrada de datos del participante */}
@@ -439,8 +439,8 @@ return (
             placeholder="Nombre del proveedor"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="bg-gray-800 border-2 border-gray-300 p-2 rounded-md w-full flex-grow text-base md:text-xl"
-            style={{ backgroundColor: '#5e606d', fontSize: '20px' }}
+            className="bg-orange-100 border-2 border-stone-800 p-2 rounded-md w-full flex-grow text-base text-stone-800 md:text-xl"
+            style={{ fontSize: '20px' }}
           />
         </div>
         <div className="flex flex-col w-full max-w-md">
@@ -450,8 +450,8 @@ return (
             placeholder="Password"
             value={pass}
             onChange={(e) => setPass(e.target.value)}
-            className="bg-red-500 border-2 border-gray-300 p-2 rounded-md w-full flex-grow text-base md:text-xl"
-            style={{ backgroundColor: '#5e606d', fontSize: '20px' }}
+            className="bg-orange-100 border-2 border-stone-800 p-2 rounded-md w-full flex-grow text-base md:text-xl"
+            style={{ fontSize: '20px' }}
           />
         </div>
 
@@ -465,8 +465,8 @@ return (
             placeholder="Cuenta del proveedor"
             value={participantAddress}
             onChange={(e) => setParticipantAddress(e.target.value)}
-            className="bg-gray-800 border-2 border-gray-300 p-2 rounded-md w-full flex-grow text-base md:text-xl"
-            style={{ backgroundColor: '#5e606d', fontSize: '20px' }}
+            className="bg-orange-100 border-2 border-stone-800 p-2 rounded-md w-full flex-grow text-base md:text-xl"
+            style={{ fontSize: '20px' }}
           />
         </div>
         <div className="flex flex-col w-full max-w-md">
@@ -476,15 +476,15 @@ return (
             placeholder="Tipo de proveedor"
             value={participantType}
             onChange={(e) => setParticipantType(e.target.value)}
-            className="bg-gray-800 border-2 border-gray-300 p-2 rounded-md w-full flex-grow text-base md:text-xl"
-            style={{ backgroundColor: '#5e606d', fontSize: '20px' }}
+            className="bg-orange-100 border-2 border-stone-800 p-2 rounded-md w-full flex-grow text-base md:text-xl"
+            style={{ fontSize: '20px' }}
             />
         </div>
         </div>
         </div>
         <div className="content-end">
         <button
-          className="py-1 px-3 h-12 w-56 mb-1 bg-orange-500 text-slate-900 rounded-lg hover:bg-orange-400 transition-all disabled:opacity-50 text-xl"
+          className="py-1 px-3 h-12 w-56 mb-1 bg-orange-500 text-stone-800 rounded-lg hover:bg-orange-400 transition-all disabled:opacity-80 text-xl"
           onClick={addParticipant}
           disabled={isLoading || !name || !pass || !participantAddress || !participantType}
         >
@@ -505,9 +505,9 @@ return (
             value={ownerId}
             min="0"
             onChange={(e) => {setOwnerId(parseInt(e.target.value)); setpartNumber(parseInt(e.target.value))}}
-            // className="w-28 bg-gray-800 border-2 border-gray-300 p-2 rounded-md  text-base md:text-xl"
-            className="w-28 bg-gray-800 border-2 border-gray-300 p-2 rounded-md text-base md:text-xl"
-            style={{ backgroundColor: '#5e606d', fontSize: '20px' }}
+            // className="w-28 bg-orange-100 border-2 border-stone-800 p-2 rounded-md  text-base md:text-xl"
+            className="w-28 bg-orange-100 border-2 border-stone-800 p-2 rounded-md text-base md:text-xl"
+            style={{fontSize: '20px' }}
           />
         </div>
         <div className="flex flex-col flex-grow">
@@ -517,8 +517,9 @@ return (
             placeholder="Número del producto"
             value={modelNumber}
             onChange={(e) => setModelNumber(e.target.value)}
-            className="flex-grow bg-gray-800 border-2 border-gray-300 p-2 rounded-md text-base md:text-xl"
-            style={{ backgroundColor: '#5e606d', fontSize: '20px' }}
+            className="flex-grow bg-orange-100 border-2 border-stone-800 p-2 rounded-md text-base md:text-xl"
+            style={{ fontSize: '20px' }}
+            // style={{ backgroundColor: '#5e606d', fontSize: '20px' }}
           />
           </div>
           <div className="flex flex-col flex-grow">
@@ -528,8 +529,8 @@ return (
             placeholder="Número de serie del producto" 
             value={serialNumber}
             onChange={(e) => setSerialNumber(e.target.value)}
-            className="flex-grow bg-gray-800 border-2 border-gray-300 p-2 rounded-md text-base md:text-xl"
-            style={{ backgroundColor: '#5e606d', fontSize: '20px' }}
+            className="flex-grow bg-orange-100 border-2 border-stone-800 p-2 rounded-md text-base md:text-xl"
+            style={{fontSize: '20px' }}
           />
           </div>
           <div className="flex flex-col max-w-xs">
@@ -541,16 +542,17 @@ return (
             min="0"
             value={productCost}
             onChange={(e) => setProductCost(parseFloat(e.target.value))}
-            // className="w-1/3 h-12 mt-6 bg-gray-800 border-2 border-gray-300 p-2 rounded-md  text-base md:text-xl"
-            className="w-36 bg-gray-800 border-2 border-gray-300 p-2 rounded-md  text-base md:text-xl"
-            // className="w-full bg-gray-800 border-2 border-gray-300 p-2 rounded-md  text-base md:text-xl"
-            style={{ backgroundColor: '#5e606d', fontSize: '20px' }}
+            // className="w-1/3 h-12 mt-6 bg-orange-100 border-2 border-stone-800 p-2 rounded-md  text-base md:text-xl"
+            className="w-36 bg-orange-100 border-2 border-stone-800 p-2 rounded-md  text-base md:text-xl"
+            // className="w-full bg-orange-100 border-2 border-stone-800 p-2 rounded-md  text-base md:text-xl"
+            // style={{ backgroundColor: '#5e606d', fontSize: '20px' }}
+            style={{ fontSize: '20px' }}
           />
         </div>
         </div>
         <div>
         <button
-          className="py-1 px-3 h-12 w-56 mt-6 bg-orange-500 text-slate-900  rounded-lg hover:bg-orange-400 transition-all disabled:opacity-50 text-xl"
+          className="py-1 px-3 h-12 w-56 mt-6 bg-orange-500 text-stone-800  rounded-lg hover:bg-orange-400 transition-all disabled:opacity-80 text-xl"
           onClick={addProduct}
           disabled={isLoading || !ownerId || !modelNumber || !serialNumber || !productCost}
           >
@@ -570,8 +572,8 @@ return (
             min="0"
             value={theProductId}
             onChange={(e) => setTheProductId(parseInt(e.target.value))}
-            className="w-28 h-12 bg-gray-800 border-2 border-gray-300 p-2 rounded-md text-base md:text-xl"
-            style={{ backgroundColor: '#5e606d', fontSize: '20px' }}
+            className="w-28 h-12 bg-orange-100 border-2 border-stone-800 p-2 rounded-md text-base md:text-xl"
+            style={{ fontSize: '20px' }}
           />
         </div>
         <div className="flex flex-col flex-grow">
@@ -582,8 +584,8 @@ return (
           value={user1}
           min="0"
           onChange={(e) => setUser1(parseInt(e.target.value))}
-          className="flex-grow h-12 bg-gray-800 border-2 border-gray-300 p-2 rounded-md text-base md:text-xl"
-          style={{ backgroundColor: '#5e606d', fontSize: '20px' }}
+          className="flex-grow h-12 bg-orange-100 border-2 border-stone-800 p-2 rounded-md text-base md:text-xl"
+          style={{ fontSize: '20px' }}
         />
         </div>
         <div className="flex flex-col flex-grow ">
@@ -594,16 +596,16 @@ return (
             min="0"
             value={user2}
             onChange={(e) => setUser2(parseInt(e.target.value))}
-            // className="py-1 px-3 h-12 flex-grow bg-gray-800 border-2 border-gray-300 p-2 rounded-md w-full text-base md:text-xl"
-            className=" flex-grow h-12 bg-gray-800 border-2 border-gray-300 p-2 rounded-md text-base md:text-xl"
-            style={{ backgroundColor: '#5e606d', fontSize: '20px' }}
+            // className="py-1 px-3 h-12 flex-grow bg-orange-100 border-2 border-stone-800 p-2 rounded-md w-full text-base md:text-xl"
+            className=" flex-grow h-12 bg-orange-100 border-2 border-stone-800 p-2 rounded-md text-base md:text-xl"
+            style={{ fontSize: '20px' }}
           />
         <div>
         </div>
         </div>
 
         <button
-          className="w-56 h-12 mt-7 bg-orange-500 text-slate-900 rounded-lg hover:bg-orange-400 transition-all disabled:opacity-50 text-xl"
+          className="w-56 h-12 mt-7 bg-orange-500 text-stone-800 rounded-lg hover:bg-orange-400 transition-all disabled:opacity-80 text-xl"
           onClick={newOwner}
           disabled={isLoading || !user1 || !user2 || !theProductId}
           >
@@ -612,7 +614,7 @@ return (
       </div>
 
       {/* Mostrar imágenes según el tipo de propietario */}
-      <div className="flex flex-row justify-between mt-4 mb-2 w-full border-2 border-gray-300 rounded-md">
+      <div className="flex flex-row justify-between mt-4 mb-2 w-full border-2 border-stone-800 rounded-md">
         <h1 className="w-auto m-2 md:text-3xl content-center">
           Recuperacion de datos</h1>
         <div className="flex flex-row place-items-center m-2">        
@@ -623,45 +625,45 @@ return (
           min="0"
           value={productId}
           onChange={(e) => {setProductId(parseInt(e.target.value)); setParticipantId(parseInt(e.target.value))}}
-          className="bg-gray-800 border-2 border-gray-300 p-2 m-2 rounded-md w-24 text-base md:text-xl"
-          style={{ backgroundColor: '#5e606d', fontSize: '20px' }}
+          className="bg-orange-100 border-2 border-stone-800 p-2 m-2 rounded-md w-24 text-base md:text-xl"
+          style={{ fontSize: '20px' }}
         />
         </div>
       </div>
       <div className="flex justify-around gap-4">
       {/* <p className="flex justify-around mb-8">OWNER Number of product: {ownerNumber || 'No data'}</p> */}
-        <p className="bg-gray-800 border-2 border-gray-300 p-4 rounded-md w-full max-w-4xl mb-4 text-base md:text-xl">
+        <p className="bg-orange-100 border-2 border-stone-800 p-4 rounded-md w-full max-w-4xl mb-4 text-base md:text-xl">
           {/* PARTICIPANT NAME : {participant_name || 'No data'}</p> */}
           {/* NOMBRE DEL PROVEEDOR : {participantData ? JSON.stringify(participantData[0]) : 'No data'}</p> */}
           NOMBRE DEL PROVEEDOR : {productData ? JSON.stringify(productData[2]) : 'No data'}</p>
-        <p className="bg-gray-800 border-2 border-gray-300 p-4 rounded-md w-full max-w-4xl mb-4 text-base md:text-xl">
+        <p className="bg-orange-100 border-2 border-stone-800 p-4 rounded-md w-full max-w-4xl mb-4 text-base md:text-xl">
           {/* PARTICIPANT TYPE : {participant_type || 'No data'}</p> */}
           {/* TIPO DE PROVEEDOR: {participantData ? JSON.stringify(participantData[1]) : 'No data'}</p> */}
           TIPO DE PROVEEDOR: {productData ? JSON.stringify(productData[3]) : 'No data'}</p>
-        {/* <p className="bg-gray-800 border-2 border-gray-300 p-4 rounded-md w-full max-w-4xl mb-4 text-base md:text-xl"> */}
+        {/* <p className="bg-orange-100 border-2 border-stone-800 p-4 rounded-md w-full max-w-4xl mb-4 text-base md:text-xl"> */}
           {/* PARTICIPANT TYPE : {participant_type || 'No data'}</p> */}
           {/* CUENTA DEL PROVEEDOR: {participantData ? JSON.stringify(participantData[2]) : 'No data'}</p> */}
       </div>
-      <div className="flex justify-around gap-4">
+      <div className="flex justify-around gap-4 content-center items-center">
         <img
           src="supplychain_manufacturer.png"
-          className={`w-52 h-28 rounded-md transform transition-transform duration-300 ${participant_type === '"Manufacturer"' ? 'scale-120 filter-none h-36' : ''}`}
+          className={`w-52 h-28 rounded-md transform transition-transform duration-300 ${participant_type === '"Manufacturer"' ? 'scale-120 filter-none h-36 border-2 border-stone-800 rounded-md' : ''}`}
           alt="Manufacturer"
         />
         <img
           src="supplychain_supplier1.png"
-          className={`w-52 h-28 rounded-md transform transition-transform duration-300 ${participant_type === '"Supplier"' ? 'scale-120 filter hue-rotate-90  h-36' : ''}`}
+          className={`w-52 h-28 rounded-md transform transition-transform duration-300 ${participant_type === '"Supplier"' ? 'scale-120 filter hue-rotate-90  h-36 border-2 border-stone-800 rounded-md' : ''}`}
           alt="Supplier"
         />
         <img
           src="supplychain_customer.png"
-          className={`w-52 h-28 rounded-md transform transition-transform duration-300 ${participant_type === '"Consumer"' ? 'scale-120 filter hue-rotate-180  h-36' : ''}`}
+          className={`w-52 h-28 rounded-md transform transition-transform duration-300 ${participant_type === '"Consumer"' ? 'scale-120 filter hue-rotate-180  h-36 border-2 border-stone-800 rounded-md' : ''}`}
           alt="Consumer"
         />
       </div>
       <div className="flex flex-col justify-center w-full m-auto mt-4 gap-4 ">
       
-      <div className="bg-gray-800 border-2 border-gray-300 p-4 rounded-md w-full  mb-4 text-base md:text-xl">
+      <div className="bg-orange-100 border-2 border-stone-800 p-4 rounded-md w-full  mb-4 text-base md:text-xl">
         Datos del producto: NUMERO - {productData ? productData[0] : 'No data'} &nbsp;|&nbsp;
         Nº DE SERIE - {productData ? productData[1] : 'No data'} &nbsp;|&nbsp;
         COSTE - {productData ? (typeof productData[4] === 'bigint' ? productData[4].toString() : productData[4].toString()) : 'No data'} &nbsp;|&nbsp;
@@ -669,7 +671,7 @@ return (
         FECHA DE FABRICACION - {productData ? productData[5]? formatDate(productData[5]) : 'No data' : 'No data'} &nbsp;|&nbsp;
         CUENTA DEL DUEÑO - {productData ? productData[6] : 'No data'}
       </div>
-      <div className="flex flex-row bg-gray-800 border-2 border-gray-300 p-4 rounded-md w-full mb-2 text-base md:text-xl">
+      <div className="flex flex-row bg-orange-100 border-2 border-stone-800 p-4 rounded-md w-full mb-2 text-base md:text-xl">
         <h2>Trazabilidad del producto:&nbsp;</h2>
         <div className="flex flex-wrap items-center justify-start">
           <span>TRASFERENCIAS-&nbsp;</span>
@@ -688,19 +690,19 @@ return (
         </div>
       </div>
       </div>
-      {/* <div className="bg-gray-800 border-2 border-gray-300 p-4 rounded-md w-full  mb-4 text-base md:text-xl">
+      {/* <div className="bg-orange-100 border-2 border-stone-800 p-4 rounded-md w-full  mb-4 text-base md:text-xl">
         Ownership Data: {ownershipData ? JSON.stringify(ownershipData) : 'No data'}
       </div> */}
-      <div className="flex flex-col  items-center content-center justify-start  w-full m-auto p-2 m-2 mb-6 rounded-md border-2 border-gray-300">
+      <div className="flex flex-col  items-center content-center justify-start  w-full m-auto p-2 m-2 mb-6 rounded-md border-2 border-stone-800">
       {ownershipData && _productId !== 0 && (
-      <div className="bg-gray-800 border-2 border-gray-300 p-4 rounded-md w-full  mb-2 text-base md:text-xl">
+      <div className="bg-orange-100 border-2 border-stone-800 p-4 rounded-md w-full  mb-2 text-base md:text-xl">
         Datos de adquisición: ID DE PRODUCTO - {ownershipData ? (typeof ownershipData[0] === 'bigint' ? ownershipData[0].toString() : ownershipData[0].toString()) : 'No data'} &nbsp;|&nbsp;
         ID DEL COMPRADOR - {ownershipData ? (typeof ownershipData[1] === 'bigint' ? ownershipData[1].toString() : ownershipData[1].toString()) : 'No data'} &nbsp;|&nbsp;
         FECHA DE ADQUISICION - {ownershipData ? (typeof ownershipData[3] === 'bigint' ? formatDate(ownershipData[3])  : formatDate(ownershipData[3])) : 'No data'}
       </div>
       )}
       {participantData && participantId !== 0 && (
-      <div className="bg-gray-800 border-2 border-gray-300 p-4 rounded-md w-full mb-2 text-base md:text-xl">
+      <div className="bg-orange-100 border-2 border-stone-800 p-4 rounded-md w-full mb-2 text-base md:text-xl">
         Datos del proveedor: NOMBRE - {participantData ? JSON.stringify(participantData[0]) : 'No data'} &nbsp;|&nbsp;
         TIPO - {participantData ? JSON.stringify(participantData[1]) : 'No data'}  &nbsp;|&nbsp;
         CUENTA - {participantData ? JSON.stringify(participantData[2]) : 'No data'}
@@ -717,12 +719,12 @@ return (
           min="0"
           value={_productId}
           onChange={(e) => {set_ProductId(parseInt(e.target.value)); setParticipantId(parseInt(e.target.value))}}
-          className="bg-gray-800 border-2 border-gray-300 p-2 rounded-md w-24 text-base md:text-xl"
-          style={{ backgroundColor: '#5e606d', fontSize: '20px' }}
+          className="bg-orange-100 border-2 border-stone-800 p-2 rounded-md w-24 text-base md:text-xl"
+          style={{ fontSize: '20px' }}
           />
         {/* <button
           onClick={fetchParticipantData}
-          className="py-2 px-3 w-full max-w-48 bg-fuchsia-700 text-white border-2 border-gray-300 p-4 rounded-md hover:bg-fuchsia-900 transition-all disabled:opacity-50 text-xl"
+          className="py-2 px-3 w-full max-w-48 bg-fuchsia-700 text-white border-2 border-stone-800 p-4 rounded-md hover:bg-fuchsia-900 transition-all disabled:opacity-50 text-xl"
           >
           Datos de proveedor
         </button>
@@ -735,14 +737,14 @@ return (
       </button> */}
       <button
         onClick={fetchParticipantData}
-        className="py-2 px-3 w-64 bg-orange-500  text-slate-900 rounded-lg hover:bg-orange-400  transition-all disabled:opacity-50 text-xl font-semibold"
+        className="py-2 px-3 w-64 bg-orange-500  text-stone-800 rounded-lg hover:bg-orange-400  transition-all disabled:opacity-80 text-xl font-semibold"
         disabled={isLoading || !_productId}
         >
         Datos de proveedor
       </button>
       <button
         onClick={fetchOwnershipData}
-        className="py-2 px-3 w-64 bg-orange-500 text-slate-900 rounded-lg hover:bg-orange-400 transition-all disabled:opacity-50 text-xl font-semibold"
+        className="py-2 px-3 w-64 bg-orange-500 text-stone-800 rounded-lg hover:bg-orange-400 transition-all disabled:opacity-80 text-xl font-semibold"
         disabled={isLoading || !participantId }
         >
         Transferencias de producto
