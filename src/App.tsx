@@ -575,7 +575,7 @@ return (
             style={{ fontSize: '20px' }}
           />
         </div>
-        <div className="flex flex-col flex-grow">
+        <div className="flex flex-col flex-grow max-w-md">
         <label htmlFor="user1">Mover el producto de este proveedor...</label>
         <input
           type="number"
@@ -583,11 +583,11 @@ return (
           value={user1}
           min="0"
           onChange={(e) => setUser1(parseInt(e.target.value))}
-          className="flex-grow h-12 bg-orange-100 border-2 border-stone-800 p-2 rounded-md text-base md:text-xl"
+          className="flex-grow max-w-md  bg-orange-100 p-2 border-2 border-stone-800  rounded-md text-base md:text-xl"
           style={{ fontSize: '20px' }}
         />
         </div>
-        <div className="flex flex-col flex-grow ">
+        <div className="flex flex-col flex-grow max-w-md">
           <label htmlFor="user2">...a este proveedor:</label>
           <input
             type="number"
@@ -596,7 +596,7 @@ return (
             value={user2}
             onChange={(e) => setUser2(parseInt(e.target.value))}
             // className="py-1 px-3 h-12 flex-grow bg-orange-100 border-2 border-stone-800 p-2 rounded-md w-full text-base md:text-xl"
-            className=" flex-grow h-12 bg-orange-100 border-2 border-stone-800 p-2 rounded-md text-base md:text-xl"
+            className=" flex-grow  bg-orange-100 p-2 border-2 border-stone-800 rounded-md text-base md:text-xl"
             style={{ fontSize: '20px' }}
           />
         <div>
@@ -604,7 +604,7 @@ return (
         </div>
 
         <button
-          className="w-56 h-12 mt-7 bg-orange-500 text-stone-800 rounded-lg hover:bg-orange-400 transition-all disabled:opacity-80 text-xl"
+          className="w-56 h-12 mt-6 bg-orange-500 text-stone-800 rounded-lg hover:bg-orange-400 transition-all disabled:opacity-80 text-xl"
           onClick={newOwner}
           disabled={isLoading || !user1 || !user2 || !theProductId}
           >
